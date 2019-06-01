@@ -27,18 +27,18 @@ public class BufferExample {
             System.out.println("read Count : " + readCnt);
             inChannel.close();
 
-            // 읽어온 A.txt의 내용을 콘솔로 출력해보기. byte배열을 사용하여 저장한뒤 출력함.
+            // 읽어온 test.txt의 내용을 콘솔로 출력해보기. byte배열을 사용하여 저장한뒤 출력함.
             // position 위치를 0으로 수정함.
             buffer.flip();
             byte[] rByte = new byte[20];
             buffer.get(rByte); // 이때 position값은 rByte에 저장한 만큼 이동하게 된다.
 
-            System.out.println("A.txt : " + new String(rByte)); // A.txt파일 내용을 콘솔에 출력
+            System.out.println("test.txt : " + new String(rByte)); // A.txt파일 내용을 콘솔에 출력
 
-            // 다시 버퍼의 position값을 0으로 변경.(B.txt파일에 write해야하므로)
+            // 다시 버퍼의 position값을 0으로 변경.(test2.txt파일에 write해야하므로)
             buffer.flip();
 
-            // B.txt에 읽어온 바이트 버퍼를 write함. 이때 버퍼의 position은 write한 만큼 이동함.
+            // test2.txt에 읽어온 바이트 버퍼를 write함. 이때 버퍼의 position은 write한 만큼 이동함.
             outChannel.write(buffer); //
             outChannel.close();
         } catch(IOException e) {

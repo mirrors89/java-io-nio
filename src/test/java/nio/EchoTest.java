@@ -17,7 +17,7 @@ public class EchoTest {
     EchoClient client;
 
     @Before
-    public void setup() throws IOException, InterruptedException {
+    public void setup() throws IOException {
         server = EchoServer.start();
         client = EchoClient.start();
     }
