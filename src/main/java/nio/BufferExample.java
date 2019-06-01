@@ -33,7 +33,7 @@ public class BufferExample {
             byte[] rByte = new byte[20];
             buffer.get(rByte); // 이때 position값은 rByte에 저장한 만큼 이동하게 된다.
 
-            System.out.println("test.txt : " + new String(rByte)); // A.txt파일 내용을 콘솔에 출력
+            System.out.println("test.txt : " + new String(rByte)); // test.txt파일 내용을 콘솔에 출력
 
             // 다시 버퍼의 position값을 0으로 변경.(test2.txt파일에 write해야하므로)
             buffer.flip();
